@@ -9,7 +9,7 @@ import {
 
 import { LoginScreen } from '../auth/LoginScreen';
 import { RegisterScreen } from '../auth/RegisterScreen';
-import { PrestamosScreen } from '../layout/PrestamosScreen';
+import { Layout } from '../layout/Layout';
 
 export const AppRouter = () => {
     return (
@@ -17,7 +17,7 @@ export const AppRouter = () => {
             <Switch>
                 <Route exact path='/login' component={LoginScreen}></Route>
                 <Route exact path='/register' component={RegisterScreen}></Route>
-                <Route exact path='/' component={PrestamosScreen}></Route>
+                <Route exact path='/' component={Layout}></Route>
             </Switch>
         </Router>
     )
