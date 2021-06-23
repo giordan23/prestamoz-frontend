@@ -1,7 +1,21 @@
-.auth__main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
+.auth__img{
+    background-image: url(../../assets/authImg.jpg);
+    background-position: center;
 }
 
+
+// body{
+//     background-color:steelblue;
+// }
+
+.auth_bg {
+    background-color: steelblue;
+    height: 100vh;
+    min-height: 100vh;
+    width:  100vh;
+    min-width: 100vh;
+}
+
+.auth__link {
+    text-decoration: none;
+}
