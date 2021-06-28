@@ -1,0 +1,57 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navlink {
+  @apply 
+    py-2 
+    px-3 
+    text-gray-700 
+    rounded 
+    transition 
+    duration-200
+    font-medium; 
+}
+
+.navlink-active {
+    @apply 
+      py-2 
+      px-3 
+      text-white
+      rounded 
+      transition 
+      duration-200
+      bg-indigo-400;
+  }
+
+  .logoutNavLink {
+      @apply
+      py-2
+      px-3
+      bg-red-400
+      hover:bg-yellow-300
+      text-yellow-900
+      hover:text-yellow-800
+      rounded transition
+      duration-300
+  }
+
+  .navlink-mobile {
+      @apply
+        py-2 
+        px-4 
+        text-sm 
+        hover:bg-gray-200
+  }
+
+  .navlink-mobile-active {
+    @apply 
+    py-2 
+    px-3 
+    text-white
+    rounded 
+    transition 
+    duration-200
+    bg-indigo-400;
+  }

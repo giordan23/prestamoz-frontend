@@ -1,24 +1,40 @@
-import React from 'react';
+import React from "react";
 
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    // Link
-  } from "react-router-dom";
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  // Link
+} from "react-router-dom";
 
-import { LoginScreen } from '../auth/LoginScreen';
-import { RegisterScreen } from '../auth/RegisterScreen';
-import { Layout } from '../layout/Layout';
-
+// import { LoginScreen } from '../auth/LoginScreen';
+// import { RegisterScreen } from '../auth/RegisterScreen';
+// import { CajaScreen } from '../layout/CajaScreen';
+// import { PrestamosScreen } from '../layout/PrestamosScreen';
+// import { Sidebar } from '../ui/Navbar/Sidebar';
+import { AuthRouter } from "./AuthRouter";
+import { LayoutRouter } from "./LayoutRouter";
+import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 export const AppRouter = () => {
-    return (
-        <Router>
-            <Switch>
-                <Route exact path='/login' component={LoginScreen}></Route>
-                <Route exact path='/register' component={RegisterScreen}></Route>
-                <Route exact path='/' component={Layout}></Route>
-            </Switch>
-        </Router>
-    )
-}
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <PublicRoute exact path="/login" component={AuthRouter} isLoggedIn={true} />
+          <PublicRoute exact path="/register" component={AuthRouter} isLoggedIn={true} />
+
+          <PrivateRoute
+            path="/"
+            component={LayoutRouter}
+            isLoggedIn={true}
+          />
+   
+
+
+          <Redirect to="/login" />
+        </Switch>
+      </div>
+    </Router>
+  );
+};

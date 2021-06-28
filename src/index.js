@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { PerucashApp } from './PerucashApp';
+import './index.css';
 
-import './styles/custom.scss';
 
 ReactDOM.render(
     <PerucashApp />,
