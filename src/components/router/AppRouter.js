@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Redirect,
   Switch,
+  useRouteMatch
   // Link
 } from "react-router-dom";
 
@@ -19,22 +20,17 @@ import { PublicRoute } from "./PublicRoute";
 export const AppRouter = () => {
   return (
     <Router>
-      <div>
         <Switch>
           <PublicRoute exact path="/login" component={AuthRouter} isLoggedIn={true} />
           <PublicRoute exact path="/register" component={AuthRouter} isLoggedIn={true} />
-
           <PrivateRoute
             path="/"
             component={LayoutRouter}
             isLoggedIn={true}
           />
-   
-
 
           <Redirect to="/login" />
         </Switch>
-      </div>
     </Router>
   );
 };

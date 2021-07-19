@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useRouteMatch } from "react-router-dom";
 import imgLogo from "../../../assets/perucash-logo-nuevo.png";
 import { MenuIcon } from "@heroicons/react/solid";
 
@@ -10,10 +10,11 @@ export const Sidebar = () => {
     setMenu(!menu);
   };
 
+
   return (
     <>
       {/* // Navbar  */}
-      <nav className="bg-gray-100">
+      <nav className="bg-gray-100 shadow-lg">
         <div className="max-w-6xl mx-auto px-2">
           <div className="flex justify-between">
             <div className="flex space-x-4">
@@ -34,7 +35,6 @@ export const Sidebar = () => {
               {/* primary nav */}
               <div className="hidden md:flex space-x-1 items-center">
                 <NavLink
-                  exact
                   activeClassName="navlink-active"
                   to="/prestamos"
                   className="flex navlink"
